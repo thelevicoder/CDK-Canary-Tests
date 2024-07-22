@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const MyModulesCanary = new synthetics.Canary(this, 'my-modules-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, '/lib/canary-javascript/my-modules-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'my-modules-canary.js')),
+            handler: 'myModulesCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

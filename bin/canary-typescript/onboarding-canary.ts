@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const OnboardingCanary = new synthetics.Canary(this, 'onboarding-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, '/lib/canary-javascript/onboarding-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'onboarding-canary.js')),
+            handler: 'onboardingCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

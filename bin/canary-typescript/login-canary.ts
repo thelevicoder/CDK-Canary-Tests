@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const LoginCanary = new synthetics.Canary(this, 'login-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib/canary-javascript/login-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'login-canary.js')),
+            handler: 'loginCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const SupportCanary = new synthetics.Canary(this, 'support-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, '/lib/canary-javascript/support-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'support-canary.js')),
+            handler: 'supportCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

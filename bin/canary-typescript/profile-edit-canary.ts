@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const ProfileEditCanary = new synthetics.Canary(this, 'profile-edit-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, '/lib/canary-javascript/profile-edit-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'profile-edit-canary.js')),
+            handler: 'profileEditCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const ForgotPasswordCanary = new synthetics.Canary(this, 'forgotpassword-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib/canary-javascript/forgotpassword-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'forgotpassword-canary.js')),
+            handler: 'forgotPasswordCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const CreateAccountCanary = new synthetics.Canary(this, 'create-account-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib/canary-javascript/create-account-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'create-account-canary.js')),
+            handler: 'createAccountCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {

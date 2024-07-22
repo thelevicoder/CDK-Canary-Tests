@@ -12,8 +12,8 @@ class MyStack extends Stack {
         const HomepageCanary = new synthetics.Canary(this, 'homepage-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib/canary-javascript/homepage-canary.js')),
-            handler: 'index.handler',
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib', 'canary-javascript', 'homepage-canary.js')),
+            handler: 'homepageCanary',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
             environmentVariables: {
