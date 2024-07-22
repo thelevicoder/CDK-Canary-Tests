@@ -9,10 +9,10 @@ class MyStack extends Stack {
       super(scope, id, props);
   
 
-        const canary = new synthetics.Canary(this, 'create-account-canary.js', {
+        const CreateAccountCanary = new synthetics.Canary(this, 'create-account-canary', {
             schedule: synthetics.Schedule.once(),
             test: synthetics.Test.custom({
-            code: synthetics.Code.fromAsset(path.join(__dirname, 'canary')),
+            code: synthetics.Code.fromAsset(path.join(__dirname, 'lib/canary-javascript/create-account-canary.js')),
             handler: 'index.handler',
             }),
             runtime: synthetics.Runtime.SYNTHETICS_NODEJS_PUPPETEER_7_0,
